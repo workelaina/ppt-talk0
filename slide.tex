@@ -1,0 +1,179 @@
+\documentclass{beamer}
+\usepackage{ctex, hyperref}
+\usepackage[T1]{fontenc}
+
+% other packages
+\usepackage{latexsym,amsmath,xcolor,multicol,booktabs,calligra}
+\usepackage{graphicx,pstricks,listings,stackengine}
+\usepackage[normalem]{ulem}
+
+\author{userElaina}
+\title{面向人工智能研究的计算机技能分享}
+% \subtitle{The Missing Semester of Your CS Education}
+\institute{人工智能学院}
+\date{2023.12.?}
+\usepackage{JilinUniv}
+
+% defs
+\def\cmd#1{\texttt{\color{red}\footnotesize $\backslash$#1}}
+\def\env#1{\texttt{\color{blue}\footnotesize #1}}
+\definecolor{deepblue}{rgb}{0,0,0.5}
+\definecolor{deepred}{rgb}{0.6,0,0}
+\definecolor{deepgreen}{rgb}{0,0.5,0}
+\definecolor{halfgray}{gray}{0.55}
+
+\lstset{
+    basicstyle=\ttfamily\small,
+    keywordstyle=\bfseries\color{deepblue},
+    emphstyle=\ttfamily\color{deepred},    % Custom highlighting style
+    stringstyle=\color{deepgreen},
+    numbers=left,
+    numberstyle=\small\color{halfgray},
+    rulesepcolor=\color{red!20!green!20!blue!20},
+    frame=shadowbox,
+}
+
+
+\begin{document}
+
+\kaishu
+\begin{frame}
+    \titlepage
+    \begin{figure}[htpb]
+        \begin{center}
+            \includegraphics[width=0.15\linewidth]{pic/Jilin_University_Logo.eps}
+        \end{center}
+    \end{figure}
+\end{frame}
+
+\begin{frame}
+\tableofcontents[sectionstyle=show,subsectionstyle=show/shaded/hide,subsubsectionstyle=show/shaded/hide]
+\end{frame}
+
+\section{背景}
+
+\begin{frame}{由来及参考}
+    \begin{itemize}
+        \item MIT: The Missing Semester of Your CS Education (计算机教育中缺失的一课)
+        \item ZJU-竺院: 实用技能拾遗
+    \end{itemize}
+\end{frame}
+
+\section{Environment}
+
+\begin{frame}{mirrors}
+    \begin{itemize}
+        \item Tuna, BFSU, HIT, USTC, ..., JLU!
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{mirrors}
+    \begin{figure}[c]
+        \centering
+        \includegraphics[height=.8\textheight]{pic/mirror.png}
+        \caption{JLU Open‑source Mirrors}
+    \end{figure}
+\end{frame}
+
+\begin{frame}{mirrors}
+    \begin{itemize}
+        \item Tuna, BFSU, HIT, USTC, ..., JLU!!
+        \item https://mirrors.jlu.edu.cn/
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{mirrors}
+    \begin{figure}[c]
+        \centering
+        \includegraphics[height=.7\textheight]{pic/mirrorz.png}
+        \caption{MirrorZ}
+    \end{figure}
+\end{frame}
+
+\begin{frame}{mirrors}
+    \begin{itemize}
+        \item Tuna, BFSU, HIT, USTC, ..., JLU!
+        \item https://mirrors.jlu.edu.cn/
+        \item MirrorZ.org
+    \end{itemize}
+\end{frame}
+
+% \begin{frame}{mirrors}
+%     \begin{minipage}[r]{0.3\linewidth}
+%         \medskip
+%         %\hspace{2cm}
+%         \begin{figure}[h]
+%             \centering
+%             \includegraphics[height=.6\textheight]{pic/down.png}
+%         \end{figure}
+%     \end{minipage}\hspace{1cm}
+%     \begin{minipage}[c]{0.5\linewidth}
+%         \medskip
+%         %\hspace{2cm}
+%         \begin{figure}[h]
+%             \centering
+%             \includegraphics[height=.6\textheight]{pic/cache.png}
+%         \end{figure}
+%     \end{minipage}
+% \end{frame}
+
+\begin{frame}{proxy}
+    \begin{itemize}
+        \item https://greasyfork.org/scripts/395271
+        \item https://github.com/rosebe/FUCK-GFW
+        \item Transparent Proxy
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{proxy}
+    \begin{figure}[c]
+        \centering
+        \includegraphics[height=.5\textheight]{pic/gf.png}
+        \caption{https://github.com/userElaina/this-is-the-China-website}
+    \end{figure}
+\end{frame}
+
+\begin{frame}{虚拟环境}
+    \begin{itemize}
+        \item py -m venv ENV\_DIR
+        \item Anaconda
+        \item Docker
+        \item VM
+    \end{itemize}
+\end{frame}
+
+\section{Linux}
+
+\begin{frame}{后台运行}
+    \begin{itemize}
+        \item \sout{\&}
+        \item nohup CMD > LOG 2>\&1 \&
+        \item screen
+        \item Tmux
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Distribution}
+    \begin{itemize}
+        \item Debian and Ubuntu
+        \item Arch Linux and Manjaro
+    \end{itemize}
+\end{frame}
+
+\section{杂项}
+
+\begin{frame}{LaTeX}
+    \begin{itemize}
+        \item Template
+        \item Overleaf
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{LaTeX}
+    \begin{itemize}
+        \item Template
+        \item Overleaf
+    \end{itemize}
+\end{frame}
+
+\end{document}
