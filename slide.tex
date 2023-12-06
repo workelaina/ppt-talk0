@@ -11,7 +11,7 @@
 \title{面向人工智能研究的计算机技能分享}
 % \subtitle{The Missing Semester of Your CS Education}
 \institute{人工智能学院}
-\date{2023.12.?}
+\date{2023.12.7}
 \usepackage{JilinUniv}
 
 % defs
@@ -57,6 +57,7 @@
 %     \begin{itemize}
 %         \item MIT: The Missing Semester of Your CS Education (计算机教育中缺失的一课)
 %         \item ZJU-竺院: 实用技能拾遗
+%         \item "很长时间你们都被困在墙内" % miss 的比 ZJU 还要多一点
 %     \end{itemize}
 % \end{frame}
 
@@ -67,6 +68,10 @@
 \begin{frame}{mirrors}
     \begin{itemize}
         \item Tuna, BFSU, HIT, USTC, ..., JLU!
+        \item pip install \_ -i https://mirrors.jlu.edu.cn/pypi/simple/
+        \item /etc/apt/source.list
+        \item /etc/pacman.d/mirrorlist
+        \item pacman-mirrors
     \end{itemize}
 \end{frame}
 
@@ -86,43 +91,24 @@
     \end{figure}
 \end{frame}
 
-% \begin{frame}{mirrors}
-%     \begin{minipage}[r]{0.3\linewidth}
-%         \medskip
-%         %\hspace{2cm}
-%         \begin{figure}[h]
-%             \centering
-%             \includegraphics[height=.6\textheight]{pic/down.png}
-%         \end{figure}
-%     \end{minipage}\hspace{1cm}
-%     \begin{minipage}[c]{0.5\linewidth}
-%         \medskip
-%         %\hspace{2cm}
-%         \begin{figure}[h]
-%             \centering
-%             \includegraphics[height=.6\textheight]{pic/cache.png}
-%         \end{figure}
-%     \end{minipage}
-% \end{frame}
-
 \begin{frame}{proxy}
     \begin{itemize}
-        \item https://greasyfork.org/scripts/395271
-        \item https://github.com/rosebe/FUCK-GFW
+        \item WebVPN 助手: https://greasyfork.org/scripts/395271
+        \item 包管理器使用代理: https://github.com/rosebe/FUCK-GFW
         \item Transparent Proxy
     \end{itemize}
 \end{frame}
 
 \begin{frame}{proxy}
-    \begin{figure}[c]
-        \centering
-        \includegraphics[height=.5\textheight]{pic/gf.png}
-        \caption{将国际网站伪装成中国网站
-        \begin{itemize}
-            \item https://github.com/userElaina/this-is-the-China-website
-            \item https://greasyfork.org/scripts/461427
-        \end{itemize}}
-    \end{figure}
+    \begin{itemize}
+        \item \begin{figure}[c]
+            \centering
+            \includegraphics[height=.5\textheight]{pic/gf.png}
+            \caption{将国际网站伪装成中国网站}
+        \end{figure}
+        \item https://github.com/userElaina/this-is-the-China-website
+        \item https://greasyfork.org/scripts/461427
+    \end{itemize}
 \end{frame}
 
 \begin{frame}{虚拟环境}
@@ -130,34 +116,22 @@
         \item py -m venv ENV\_DIR
         \item Anaconda
         \item Docker
-        \item VM
+        \item VM (WSL, Sandbox, Hyper-V, VMware, Qemu...)
     \end{itemize}
 \end{frame}
 
 \section{Linux}
 
-\begin{frame}{shell (cli)}
+\begin{frame}{shell}
     \begin{itemize}
-    \end{itemize}
-\end{frame}
-
-\begin{frame}{vim}
-    \begin{itemize}
-    \end{itemize}
-\end{frame}
-
-\begin{frame}{git}
-    \begin{itemize}
-    \end{itemize}
-\end{frame}
-
-\begin{frame}{管道}
-    \begin{itemize}
-    \end{itemize}
-\end{frame}
-
-\begin{frame}{ssh (scp)}
-    \begin{itemize}
+        \item bash, zsh, fish
+        \item man, --help
+        \item Vim
+        \item cat, find, diff, grep, awk
+        \item Git, GitHub
+        \item make, cmake
+        \item ssh -p 50022 user@nas.mil
+        \item scp -P 50022 -r ./localfolder/ user@192.168.1.2:/mnt/t1/
     \end{itemize}
 \end{frame}
 
@@ -174,33 +148,53 @@
     \begin{itemize}
         \item Debian and Ubuntu
         \item Arch Linux and Manjaro
+        \item RHEL and CentOS
+        \item Kali Linux and Black Arch Linux
+        \item Deepin
     \end{itemize}
 \end{frame}
 
-\section{硬件}
+% \section{硬件}
 
-\begin{frame}{硬件加速}
-    \begin{itemize}
-    \end{itemize}
-\end{frame}
+% \begin{frame}{硬件加速}
+%     \begin{itemize}
+%     \end{itemize}
+% \end{frame}
 
-\begin{frame}{硬件选购}
-    \begin{itemize}
-    \end{itemize}
-\end{frame}
+% \begin{frame}{硬件选购}
+%     \begin{itemize}
+%     \end{itemize}
+% \end{frame}
 
 \section{杂项}
 
-\begin{frame}{Markdown}
-    \begin{itemize}
-    \end{itemize}
-\end{frame}
+% \begin{frame}{Markdown}
+%     \begin{itemize}
+%     \end{itemize}
+% \end{frame}
 
 \begin{frame}{LaTeX}
     \begin{itemize}
         \item Template
         \item Overleaf
+        \item IEEE
     \end{itemize}
+\end{frame}
+
+\section{致谢}
+
+\begin{frame}{由来及参考}
+    \begin{itemize}
+        \item MIT: The Missing Semester of Your CS Education (计算机教育中缺失的一课)
+        \item ZJU-竺院: 实用技能拾遗
+        \item "很长时间你们都被困在墙内" % miss 的比 ZJU 还要多一点
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Q \& A}
+    \begin{center}
+        {\Huge\calligra Thanks!}
+    \end{center}
 \end{frame}
 
 \end{document}
