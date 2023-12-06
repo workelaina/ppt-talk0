@@ -51,24 +51,31 @@
 
 % cs dalao: 写个教案
 
-% \section{背景}
+\section{背景}
 
-% \begin{frame}{由来及参考}
-%     \begin{itemize}
-%         \item MIT: The Missing Semester of Your CS Education (计算机教育中缺失的一课)
-%         \item ZJU-竺院: 实用技能拾遗
-%         \item "很长时间你们都被困在墙内" % miss 的比 ZJU 还要多一点
-%     \end{itemize}
-% \end{frame}
+\begin{frame}{由来及参考}
+    \begin{itemize}
+        \item MIT: The Missing Semester of Your CS Education (计算机教育中缺失的一课)
+        \item ZJU-竺院: 实用技能拾遗
+        \item "很长时间你们都被困在墙内" % miss 的比 ZJU 还要多一点
+    \end{itemize}
+\end{frame}
 
-% zju: 绪论，shell + cli (+ vim), git(hub), latex, 文档排版, docker
+\begin{frame}{简介}
+    \begin{itemize}
+        \item 包括: 镜像站, 代理, 虚拟环境, Shell, CLI, 后台运行, 发行版, LaTeX 等.
+        \item 不包括: 如何访问 GitHub 等网站.
+    \end{itemize}
+\end{frame}
 
 \section{Environment}
 
 \begin{frame}{mirrors}
+    Tuna, BFSU, HIT, USTC, ..., JLU!
     \begin{itemize}
-        \item Tuna, BFSU, HIT, USTC, ..., JLU!
-        \item pip install \_ -i https://mirrors.jlu.edu.cn/pypi/simple/
+        \tt
+        \item pip install --upgrade numpy \\ -i https://mirrors.jlu.edu.cn/pypi/simple/
+        \item ~/.condarc
         \item /etc/apt/source.list
         \item /etc/pacman.d/mirrorlist
         \item pacman-mirrors
@@ -100,12 +107,12 @@
 \end{frame}
 
 \begin{frame}{proxy}
+    \begin{figure}[c]
+        \centering
+        \includegraphics[height=.5\textheight]{pic/gf.png}
+        \caption{将国际网站伪装成中国网站}
+    \end{figure}
     \begin{itemize}
-        \item \begin{figure}[c]
-            \centering
-            \includegraphics[height=.5\textheight]{pic/gf.png}
-            \caption{将国际网站伪装成中国网站}
-        \end{figure}
         \item https://github.com/userElaina/this-is-the-China-website
         \item https://greasyfork.org/scripts/461427
     \end{itemize}
@@ -113,32 +120,96 @@
 
 \begin{frame}{虚拟环境}
     \begin{itemize}
-        \item py -m venv ENV\_DIR
-        \item Anaconda
+        \item {\tt{py -m venv ENV\_DIR}}
+        \item Anaconda / Miniconda
+        \item {\tt{conda create -n ENV\_NAME python=x.x}}
         \item Docker
-        \item VM (WSL, Sandbox, Hyper-V, VMware, Qemu...)
+        \item Virtual Machine: WSL, Sandbox, Hyper-V, VMware, Qemu, PVE, ESXi, ...
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{虚拟环境 - Windows}
+    Control Panel - Programs - Turn Windows features on or off:
+    \begin{itemize}
+        \item Hyper-V
+        \item Windows Hypervisor Platform
+        \item Windows Sandbox
+        \item Windows Subsystem for Linux
     \end{itemize}
 \end{frame}
 
 \section{Linux}
 
-\begin{frame}{shell}
+\begin{frame}{Shell}
+    Shell is not Terminal!
     \begin{itemize}
-        \item bash, zsh, fish
-        \item man, --help
-        \item Vim
-        \item cat, find, diff, grep, awk
-        \item Git, GitHub
-        \item make, cmake
-        \item ssh -p 50022 user@nas.mil
-        \item scp -P 50022 -r ./localfolder/ user@192.168.1.2:/mnt/t1/
+        \item bash: Bourne Again Shell, default.
+        \item Zsh: Z Shell, https://ohmyz.sh/.
+        \item fish: Friendly Interactive Shell, generates by parsing man pages.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Help}
+    \begin{itemize}
+        \item {\tt ----help}
+        \item man
+        \item tldr
+        \item RTFM, STFW
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{IDE}
+    \begin{itemize}
+        \item 编译器: 是将原始语言源代码转换成目标语言计算机程序. gcc, msvc, clang, ...
+        \item 编辑器: 文本编辑. Vim, NeoVim, VSCode, ...
+        \item 集成开发环境 (IDE): 能编辑, 构建, 测试, 打包的软件. VS, JetBrains, ...
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{CLI}
+    \begin{itemize}
+        \item {\tt ls -ahl}: all, human readable, long listing format
+        \item diff, 比较文件
+        \item cat, bat, 输出与拼接文件
+        \item xxd, hexyl, 十六进制输出文件
+        \item find, fd, 查找文件
+        \item grep, ripgrep, 搜索文件内容
+        \item top, htop, btop, "任务管理器"
+        \item make, cmake, 自动化
+        \item neofetch, 显示系统信息
+        \item FFmpeg, 多媒体处理
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{SSH (SCP)}
+    \begin{itemize}
+        \tt
+        \item ssh-keygen -t ed25519 -C "userelaina@pm.me"
+        \item cat \textasciitilde/.ssh/id\_ed25519.pub
+        \item ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKmmagvzHfnb NiN3mKrLYqCirEm75But9tKxKas5VX4n userelaina@pm.me
+        \item vim \textasciitilde/.ssh/id\_ALGORITHM
+        \\ \quad \\
+        \item ssh -i \textasciitilde/.ssh/id\_ed25519 -p 50022 user@nas.mil
+        \item scp -P 50022 -r ./a/ user@192.168.1.2:\textasciitilde/t1/
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Git (GitHub)}
+    \begin{itemize}
+        \item {\tt git clone https://github.com/opencv/opencv.git}
+        \item {\tt git clone git@github.com:opencv/opencv.git}
+        \item {\tt git clone --recurse-submodules --remote-submodule https://github.com/bad-apple-lab/Bad-Apple.git}
+        \\ \quad \\
+        \item GitHub - Settings - SSH and GPG keys
+        \item {\tt vim \textasciitilde/.ssh/config}
+        \item {\tt ssh -T git@github.com}
     \end{itemize}
 \end{frame}
 
 \begin{frame}{后台运行}
     \begin{itemize}
         \item \sout{\&}
-        \item nohup CMD > LOG 2>\&1 \&
+        \item {\tt nohup CMD > LOG 2>\&1 \&}
         \item screen
         \item Tmux
     \end{itemize}
@@ -178,16 +249,6 @@
         \item Template
         \item Overleaf
         \item IEEE
-    \end{itemize}
-\end{frame}
-
-\section{致谢}
-
-\begin{frame}{由来及参考}
-    \begin{itemize}
-        \item MIT: The Missing Semester of Your CS Education (计算机教育中缺失的一课)
-        \item ZJU-竺院: 实用技能拾遗
-        \item "很长时间你们都被困在墙内" % miss 的比 ZJU 还要多一点
     \end{itemize}
 \end{frame}
 
